@@ -18,11 +18,11 @@ int main()
 	
 	int i = tamanho_matriz, j = tamanho_matriz;
 	int matriz[tamanho_matriz][tamanho_matriz];
-    pthread_t threads[tamanho_matriz];
+    	pthread_t threads[tamanho_matriz];
 
 	numeros = malloc(sizeof (int)*(i*j));
 
-    int p = 0;
+    	int p = 0;
 
 	for (int i = 0; i < tamanho_matriz; i++){
 		for (int j = 0; j < tamanho_matriz; j++) {
@@ -32,7 +32,7 @@ int main()
 		}
 	}
 
-    fim = tamanho_matriz;
+    	fim = tamanho_matriz;
 
 	for (int i = 0; i < tamanho_matriz; i++) 
 		pthread_create(&(threads[i]), NULL, somar_linhas, NULL);	
