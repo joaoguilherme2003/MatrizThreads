@@ -19,16 +19,16 @@ int main()
 	int i = tamanho_matriz, j = tamanho_matriz;
 	int matriz[tamanho_matriz][tamanho_matriz];
     	pthread_t threads[tamanho_matriz];
-
-	numeros = malloc(sizeof (int)*(i*j));
+	int tam_total = 0;
+	tam_total = i * j;
+	numeros = malloc(sizeof (int)*(tam_total));
 
     	int p = 0;
 
 	for (int i = 0; i < tamanho_matriz; i++){
-		for (int j = 0; j < tamanho_matriz; j++) {
+		for (int j = 0; j < tamanho_matriz; j++, p++) {
 			scanf("%d", &matriz[i][j]);
 			numeros[p] = matriz[i][j];
-			p++;
 		}
 	}
 
